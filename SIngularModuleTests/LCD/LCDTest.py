@@ -3,13 +3,13 @@
 # Created by Matthew Timmons-Brown for The Raspberry Pi Guy YouTube channel
 
 # Import necessary libraries for communication and display use
-from deps.drivers import lcd
+import drivers
 from time import sleep
 from datetime import datetime
 
 # Load the driver and set it to "display"
 # If you use something from the driver library use the "display." prefix first
-display = lcd()
+display = drivers.lcd()
 
 try:
     print("Writing to display")
