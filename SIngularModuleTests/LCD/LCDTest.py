@@ -14,11 +14,11 @@ display = lcd()
 try:
     print("Writing to display")
     display.lcd_display_string("No time to waste", 1)  # Write line of text to first line of display
-    # while True:
+    while True:
         # Write just the time to the display
-        # display.lcd_display_string(str(datetime.now().time()), 2)
+        display.lcd_display_string(str(datetime.now().time()), 2)
         # Uncomment the following line to loop with 1 sec delay
-        # sleep(1)
+        sleep(1)
 except KeyboardInterrupt:
     # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup
     print("Cleaning up!")
