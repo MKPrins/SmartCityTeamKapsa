@@ -21,13 +21,13 @@ I2CBUS = 1
 # LCD Address
 ADDRESS = 0x27
 
-import smbus
+from smbus2 import SMBus
 from time import sleep
 
 class i2c_device:
    def __init__(self, addr, port=I2CBUS):
       self.addr = addr
-      self.bus = smbus.SMBus(port)
+      self.bus = SMBus(port)
 
 # Write a single command
    def write_cmd(self, cmd):
@@ -113,7 +113,7 @@ class lcd:
       self.lcd_write(0x03)
       self.lcd_write(0x02)
 
-      self.lcd_write(LCD_FUNCTIONSET | LCD_2LINE | LCD_5x8DOTS | LCD_8BITMODE)
+      self.lcd_write(LCD_FUNCTIONSET | LCD_2LINE | LCD_5x8DOTS | LCD_4BITMODE)
       self.lcd_write(LCD_DISPLAYCONTROL | LCD_DISPLAYON)
       self.lcd_write(LCD_CLEARDISPLAY)
       self.lcd_write(LCD_ENTRYMODESET | LCD_ENTRYLEFT)
