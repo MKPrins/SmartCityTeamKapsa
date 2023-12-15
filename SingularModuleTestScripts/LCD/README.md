@@ -1,15 +1,14 @@
 # LCD 16x2
-
 Test script and deps for using a 16x2 LCD screen over i2c.
 
-### Main Deps
-The following is required to use the lcd screen.
+### Contents
+ - [How it works](#how-it-works)
+ - [Prerequisites](#prerequisites)
+ - [Troubleshooting](#troubleshooting)
 
-#### SMBus
-[SMBus](https://pypi.org/project/smbus2/)
-
-#### [drivers.py](./drivers.py)
-This manages the writing of byte data over i2c.
+### Prerequisites
+The following is required to use the lcd screen. These should already be included in the Pipfile in the root directy.
+ - [SMBus](https://pypi.org/project/smbus2/)
 
 ### Troubleshooting
 The driver needs to connect with the right pin. This is by default configured to `0x27`.
