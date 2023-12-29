@@ -1,12 +1,16 @@
-import drivers
+import LCDDriver
 from time import sleep
 from datetime import datetime
 
-display = drivers.lcd()
+display = LCDDriver.lcd()
 
 try:
+    print("Clearing display")
+    display.lcd_clear()  # Clear the display of any data
+    sleep(0.5)
+
     print("Writing to display")
-    display.lcd_display_string("Hello", 1)  # Write line of text to first line of display
+    display.lcd_display_string("Hello World", 1)  # Write line of text to first line of display
     sleep(5)
 
     print("Clearing display")
