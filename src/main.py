@@ -1,15 +1,15 @@
-def initialize():
-    print('Initializing')
-
-def run_main_thread():
-    print('Running main thread')
+import threading
+from threads.MeasurementThread import MeasurementThread
 
 def cleanup():
     print('Cleaning up')
 
 try:
-    initialize()
-    run_main_thread()
+    measurementThread = threading.Thread(
+        target=MeasurementThread().readMeasurements,
+        name="Measurements"
+    )
+    measurementThread.start()
 
 except KeyboardInterrupt:
     cleanup()
