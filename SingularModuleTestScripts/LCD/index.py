@@ -1,8 +1,8 @@
-import LCDDriver
+import drivers
 from time import sleep
 from datetime import datetime
 
-display = LCDDriver.lcd()
+display = drivers.lcd()
 
 try:
     print("Clearing display")
