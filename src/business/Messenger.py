@@ -37,8 +37,6 @@ class Messenger:
                 temperature = self.DataStore.getData("temperature")
                 humidity = self.DataStore.getData("humidity")
 
-                print(temperature, humidity)
-
                 self.LCDDisplay.lcd_display_string("Temp: %d C" % temperature, 1)
                 self.LCDDisplay.lcd_display_string("Humidity: %d %%" % humidity, 2)
                 sleep(0.1)
