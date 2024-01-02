@@ -7,8 +7,8 @@ class DataStore:
     
     def __init__(self):
         self.__data = {
-            "temperature": 0,
-            "humidity": 0
+            "temperature": 0.0,
+            "humidity": 0.0
         }
     
     def setData(self, key: str, value: int):

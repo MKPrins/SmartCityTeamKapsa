@@ -8,7 +8,8 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUZZER_PIN,GPIO.OUT)
 
-FREQUENCY = 0.001
+# FREQUENCY = 0.001
+FREQUENCY = 0.0005
 
 try:
 

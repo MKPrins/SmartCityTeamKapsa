@@ -5,22 +5,18 @@ class Buzzer:
 
     def __init__(self, pin):
         self.PIN = pin
-        self.FREQUENCY = 0.001
-        self.emitTimeout = None
+        self.FREQUENCY = 0.0005
 
-        GPIO.setup(pin,GPIO.OUT)
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin,GPIO.OUT)
     
-    def emit(self, duration = 2000):
-        self.emitTimeout = self.emitTimeout or time() * 1000 + 2000
-        GPIO.output(self.PIN,GPIO.HIGH)
-        sleep(self.FREQUENCY)
+    def emit(self, duration = 3):
+        startTime = time()
 
-        GPIO.output(self.PIN,GPIO.LOW)
-        sleep(self.FREQUENCY)
+        while startTime + duration > time():
+            GPIO.output(self.PIN,GPIO.HIGH)
+            sleep(self.FREQUENCY)
 
-        if self.emitTimeout > time() * 1000:
-            return
-        
-        self.emit(duration)
+            GPIO.output(self.PIN,GPIO.LOW)
+            sleep(self.FREQUENCY)
