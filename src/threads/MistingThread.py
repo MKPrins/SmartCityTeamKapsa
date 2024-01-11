@@ -33,7 +33,6 @@ class MistingThread:
     def emitOnThreshholdExceed(self):
         while True:
             if self.__mistingTimeout and self.__mistingTimeout > time():
-                self.Messenger.setPriorityMessage("Timed out...")
                 sleep(0.1)
                 continue
             
