@@ -39,10 +39,10 @@ class MistingThread:
             temperature = self.DataStore.getData("temperature")
             humidity = self.DataStore.getData("humidity")
 
-            if temperature > 30 or humidity > 70: # TODO: hudimity threshhold is flipped as it's easier to test that way
+            if temperature > 30 or humidity > 50: # TODO: hudimity threshhold is flipped as it's easier to test that way
                 self.Messenger.setPriorityMessage("Misting...")
                 self.mistingSequence()
-                self.__mistingTimeout = time() + 60 * 5 # 5 min timeout
+                self.__mistingTimeout = time() + 60 # 1 min timeout
             
             sleep(0.1)
             
